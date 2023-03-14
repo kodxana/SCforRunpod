@@ -19,11 +19,11 @@ chown -R kasm-user:kasm-user kohya_ss
 
 # Install dependencies
 cd kohya_ss
-python3.8 -m venv venv
+python -m venv venv
 source venv/bin/activate
-pip3 install torch==1.12.1+cu116 torchvision==0.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
-pip3 install xformers
-pip3 install --use-pep517 --upgrade -r requirements.txt
+pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
+pip install xformers
+pip install --use-pep517 --upgrade -r requirements.txt
 
 # Create a launcher script for the app
 echo "#!/bin/bash" > ../kohya_launcher.sh
