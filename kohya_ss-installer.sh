@@ -3,18 +3,18 @@
 # Get the current desktop path
 desktop_path="$HOME/Desktop"
 
-# Check for Python 3.8 and install if not found
-if ! command -v python3.8 &> /dev/null; then
-    echo "Python 3.8 not found. Installing Python 3.8..."
+# Check for Python 3.10 and install if not found
+if ! command -v python3.10 &> /dev/null; then
+    echo "Python 3.10 not found. Installing Python 3.10..."
     apt update
-    apt install -y python3.8
+    apt install -y python3.10 python3.10-venv
 fi
 
 # Update the package repository
-sudo apt update
+apt update
 
 # Install required packages
-sudo apt install -y python3-tk python3.8-venv firefox git
+apt install -y python3-tk firefox git
 
 # Clone the repository
 git clone https://github.com/bmaltais/kohya_ss.git "$desktop_path/kohya_ss"
@@ -28,7 +28,7 @@ fi
 cd "$desktop_path/kohya_ss"
 
 # Install dependencies
-python3.8 -m venv venv
+python3.10 -m venv venv
 source venv/bin/activate
 pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
 pip install xformers
