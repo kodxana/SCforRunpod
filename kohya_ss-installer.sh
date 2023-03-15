@@ -9,10 +9,13 @@ sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt update
 
 # Install required packages
-sudo apt install -y python3.10 python3.10-tk python3.10-distutils firefox git
+sudo apt install -y python3.10 python3.10-tk python3.10-distutils python3.10-dev firefox git
 
 # Set Python 3.10 as the default Python interpreter
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
+
+# Update pip
+curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10
 
 # Add the pip script location to PATH
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
