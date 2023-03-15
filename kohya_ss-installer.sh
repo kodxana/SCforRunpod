@@ -6,11 +6,11 @@ desktop_path="$HOME/Desktop"
 # Check for Python 3.10 and install if not found
 if ! command -v python3.10 &> /dev/null; then
     echo "Python 3.10 not found. Installing Python 3.10..."
-    apt update || { echo "Error updating package repository. Please check your internet connection and try again."; exit 1; }
-    apt install -y software-properties-common || { echo "Error installing software-properties-common. Please check your permissions and try again."; exit 1; }
-    add-apt-repository -y ppa:deadsnakes/ppa || { echo "Error adding the deadsnakes PPA repository. Please check your internet connection and try again."; exit 1; }
-    apt update || { echo "Error updating package repository. Please check your internet connection and try again."; exit 1; }
-    apt install -y python3.10 python3.10-venv || { echo "Error installing Python 3.10. Please check your permissions and try again."; exit 1; }
+    sudo apt update || { echo "Error updating package repository. Please check your internet connection and try again."; exit 1; }
+    sudo apt install -y software-properties-common || { echo "Error installing software-properties-common. Please check your permissions and try again."; exit 1; }
+    sudo add-apt-repository -y ppa:deadsnakes/ppa || { echo "Error adding the deadsnakes PPA repository. Please check your internet connection and try again."; exit 1; }
+    sudo apt update || { echo "Error updating package repository. Please check your internet connection and try again."; exit 1; }
+    sudo apt install -y python3.10 python3.10-venv || { echo "Error installing Python 3.10. Please check your permissions and try again."; exit 1; }
 fi
 
 # Update the package repository
