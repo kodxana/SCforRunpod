@@ -39,6 +39,7 @@ if nvidia-smi --query-gpu=name --format=csv,noheader | grep -q "A5000"; then
 
   # Reinstall torchvision
   python3.10 -m pip install --no-cache-dir --force-reinstall torchvision
+  python3.10 -m pip install xformers
 
   # Adjust TensorFlow, CUDA, and cuDNN installation if needed
 fi
