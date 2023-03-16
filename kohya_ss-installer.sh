@@ -30,6 +30,19 @@ python3.10 -m pip install torch torchvision torchaudio --extra-index-url https:/
 python3.10 -m pip install --use-pep517 --upgrade -r requirements.txt
 python3.10 -m pip install xformers
 
+# Check if the system has an NVIDIA A5000 GPU
+if nvidia-smi --query-gpu=name --format=csv,noheader | grep -q "A5000"; then
+  echo "NVIDIA A5000 GPU detected. Applying necessary fixes."
+
+  # Install libjpeg and libpng
+  sudo apt-get install -y libjpeg-dev libpng-dev
+
+  # Reinstall torchvision
+  python3.10 -m pip install --no-cache-dir --force-reinstall torchvision
+
+  # Adjust TensorFlow, CUDA, and cuDNN installation if needed
+fi
+
 # Create a launcher script for the app
 launcher_script="../kohya_launcher.sh"
 echo "#!/bin/bash" > $launcher_script
