@@ -52,8 +52,16 @@ echo "cd $(pwd)" >> $launcher_script
 echo "python3.10 kohya_gui.py" >> $launcher_script
 chmod +x $launcher_script
 
+# Uninstall the system psutil package
+sudo apt remove -y python3-psutil
+
+# Install the psutil package for the local Python environment
+python3.10 -m pip install --upgrade psutil
+
 # Print a message to the user indicating the installation is complete
-echo "Kohya SS has been installed. To launch the app, run the kohya_launcher.sh script in the directory above kohya_ss."
+echo "Kohya SS has been installed. To launch the app, close this window and open terminal then run accelerate config."
+echo "Accelerate config answers: this machine, no distributed training, NO, NO, NO, all, fp16."
+echo "Then run app using kohya_launcher.sh script."
 
 # Exit the script
 exit 0
