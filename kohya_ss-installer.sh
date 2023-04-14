@@ -20,6 +20,7 @@ curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10
 # Add the pip script location to PATH
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
+export PATH="$HOME/.local/bin:$PATH"
 
 # Clone the repository
 git clone https://github.com/bmaltais/kohya_ss.git
