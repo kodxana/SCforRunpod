@@ -9,7 +9,7 @@ sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt update
 
 # Install required packages
-sudo apt install -y python3.10 python3.10-tk python3.10-distutils python3.10-dev firefox git
+sudo apt install -y python3.10 python3.10-tk python3.10-distutils python3.10-dev firefox git chromium-browser
 
 # Set Python 3.10 as the default Python interpreter
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
